@@ -7,7 +7,7 @@ import numpy.testing as npt
 
 from PyPOW.__main__ import convert_files
 
-def mock_np_savetxt(newfile, data, **kwargs):
+def mock_np_savetxt(newfile, data, *args, **kwargs):
     test_data = np.loadtxt(newfile)
     real_data = data
     npt.assert_almost_equal(test_data, real_data)
